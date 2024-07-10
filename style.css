@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+:root {
+	--light: linear-gradient(180deg, hsla(186, 33%, 94%, 1) 0%, hsla(216, 41%, 79%, 1) 100%);
+	/*DARK THEME*/
+	--dk: hsla(239, 94%, 14%, 1);
+	--cd: #171D1C;
+	--td: #393E41;
+	--ic: #F94D00;
+	--finch: linear-gradient(0deg, hsla(260, 100%, 8%, 1) 0%, hsla(0, 0%, 0%, 1) 100%);
+	--dc: linear-gradient(0deg, hsla(207, 90%, 4%, 1) 0%, hsla(0, 0%, 0%, 1) 100%);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	background: var(--dc);
+	flex-wrap: wrap;
+	flex: 1 1 100vw;
+	margin: 2px;
+}
+
+header,
+nav,
+main,
+aside,
+footer {
+	font-family: "Poppins', sans-serif";
+	font-size: 16px;
+	color: #f0f0f0;
+	font-weight: 600;
+	display: flex;
+	margin: 3px;
+}
+
+header {
+	height: 6vh;
+	flex: 1 1 100vw;
+}
+
+header #logo {
+	display: flex;
+	font-family: "Titillium", sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+	font-style: normal;
+	flex: 0 1 200px;
+	justify-content: center;
+	align-items: center;
+	-webkit-tap-highlight-color: transparent;
+}
+
+#openMenu,
+#closeMenu {
+	border: none;
+	color: var(--ic);
+	background: none;
+	font-size: 30px;
+	font-weight: bold;
+	padding: 0px 5px 0px 5px;
+	cursor: pointer;
+	display: none;
+}
+
+nav {
+	justify-content: flex-end;
+	align-items: center;
+	flex: 1 1 200px;
+}
+
+nav a {
+	margin: 0 3%;
+	font-size: 20px;
+	transition: 0.5s;
+	-webkit-tap-highlight-color: transparent;
+}
+
+nav a:hover {
+	color: var(--ic);
+}
+
+.mobile {
+	display: none;
+	background: none;
+}
+
+main {
+	flex: 20 1 500px;
+}
+
+main p {
+	font-size: 9px;
+	font-weight: 400;
+	font-style: normal;
+	text-align: left;
+	margin: 5px;
+}
+
+aside {
+	flex: 1 1 200px;
+}
+
+aside p {
+  font-size: 10px;
+	font-weight: 400;
+	font-style: normal;
+	text-align: left;
+	margin: 5px;
+}
+
+footer {
+	flex: 1 1 100vw;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+@media only screen and (max-width: 717px) {
+
+	#openMenu,
+	#closeMenu {
+		display: block;
+		-webkit-tap-highlight-color: transparent;
+	}
+
+	#openMenu {
+		margin-left: auto;
+	}
+
+	#closeMenu {
+		position: fixed;
+		right: 15px;
+		top: 15px;
+	}
+
+	header {
+		order: 0;
+		height: 5vh;
+
+	}
+
+	nav {
+		order: 1;
+		position: fixed;
+		width: 40vw;
+		height: 100vh;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		background: rgba(1, 11, 19, 1);
+		margin: 0;
+		border-top: 2px solid var(--ic);
+		border-left: 2px solid var(--ic);
+		border-top-left-radius: 15px;
+		border-bottom-left-radius: 15px;
+		display: none;
+		opacity: 0;
+		transition: 0.3s;
+	}
+
+	nav a {
+		margin: 3%;
+		margin-top: 20px;
+	  margin-bottom: 20px;
+		-webkit-tap-highlight-color: transparent;
+	}
+
+	main {
+		order: 2;
+	}
+
+	main p {
+		font-size: 13px;
+		font-weight: 400;
+		font-style: normal;
+		text-align: left;
+		margin: 5px;
+	}
+
+	aside {
+		order: 3;
+	}
+
+	footer {
+		order: 4;
+	}
+
+	.mobile {
+		display: block;
+		position: fixed;
+		bottom: 0;
+		left: 2px;
+		width: 99vw;
+		height: 46px;
+		justify-content: center;
+		background: rgba(1, 11, 19, 1);
+		box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+		border-top: 2px solid var(--ic);
+		border-left: 2px solid var(--ic);
+		border-right: 2px solid var(--ic);
+		border-top-left-radius: 14px;
+		border-top-right-radius: 14px;
+		z-index: 1;
+	}
+
+	.mobile ul {
+		display: flex;
+		width: 100vw;
+	}
+
+	.mobile ul li {
+		position: relative;
+		list-style: none;
+		margin-left: 50px;
+		margin-right: 20px;
+		top: 12px;
+		z-index: 1;
+	}
+
+	.mobile ul li a {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		width: 0px;
+		font-weight: 400;
+		-webkit-tap-highlight-color: transparent;
+	}
+
+	.mobile ul li a .icon {
+		position: relative;
+		line-height: 2px;
+		font-size: 20px;
+		text-align: left;
+		transition: 0.5s;
+		color: #fff;
+		opacity: 0.75;
+	}
+
+	.mobile ul li.active a .icon {
+		transform: translateY(-4px);
+		opacity: 1;
+		color: var(--ic);
+	}
+}
